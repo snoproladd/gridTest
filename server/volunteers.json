@@ -1,0 +1,146 @@
+[
+  {
+    "firstName": "Jacob",
+    "lastName": "Ladd",
+    "role": "ADMIN",
+    "crew_lots_garages": 1,
+    "crew_signs": 1,
+    "crew_security": 1
+  },
+  {
+    "firstName": "Ryan",
+    "lastName": "Fagan",
+    "role": "OVERSEER",
+    "crew_lots_garages": 1,
+    "crew_signs": 1,
+    "crew_security": 1
+  },
+  {
+    "firstName": "Scott",
+    "lastName": "Holmes",
+    "role": "ASSISTANT_ADMIN",
+    "crew_lots_garages": 0,
+    "crew_signs": 1,
+    "crew_security": 0
+  },
+  {
+    "firstName": "Collin",
+    "lastName": "Begnoche",
+    "role": "REGISTERED",
+    "crew_lots_garages": 1,
+    "crew_signs": 1,
+    "crew_security": 1
+  },
+  {
+    "firstName": "John",
+    "lastName": "Crankshaw",
+    "role": "OVERSEER",
+    "crew_lots_garages": 1,
+    "crew_signs": 0,
+    "crew_security": 0
+  },
+  {
+    "firstName": "Brian",
+    "lastName": "Schiemer",
+    "role": "REGISTERED",
+    "crew_lots_garages": 1,
+    "crew_signs": 1,
+    "crew_security": 1
+  },
+  {
+    "firstName": "Matthew",
+    "lastName": "Kyarsgaard",
+    "role": "KEYMAN",
+    "crew_lots_garages": 0,
+    "crew_signs": 0,
+    "crew_security": 1
+  },
+  {
+    "firstName": "Rick",
+    "lastName": "Davis",
+    "role": "REGISTERED",
+    "crew_lots_garages": 1,
+    "crew_signs": 1,
+    "crew_security": 1
+  },
+  {
+    "firstName": "Jeremy",
+    "lastName": "Boshart",
+    "role": "REGISTERED",
+    "crew_lots_garages": 1,
+    "crew_signs": 0,
+    "crew_security": 0
+  },
+  {
+    "firstName": "Lee",
+    "lastName": "Duprey",
+    "role": "REGISTERED",
+    "crew_lots_garages": 1,
+    "crew_signs": 1,
+    "crew_security": 1
+  },
+  {
+    "firstName": "Logan",
+    "lastName": "Detrick",
+    "role": "REGISTERED",
+    "crew_lots_garages": 0,
+    "crew_signs": 1,
+    "crew_security": 0
+  },
+  {
+    "firstName": "Mirko",
+    "lastName": "Manrique",
+    "role": "REGISTERED",
+    "crew_lots_garages": 1,
+    "crew_signs": 1,
+    "crew_security": 1
+  },
+  {
+    "firstName": "Justin",
+    "lastName": "Cook",
+    "role": "REGISTERED",
+    "crew_lots_garages": 1,
+    "crew_signs": 1,
+    "crew_security": 1
+  },
+  {
+    "firstName": "Maurice",
+    "lastName": "Williams",
+    "role": "REGISTERED",
+    "crew_lots_garages": 0,
+    "crew_signs": 0,
+    "crew_security": 1
+  },
+  {
+    "firstName": "Moses",
+    "lastName": "Duprey",
+    "role": "KEYMAN",
+    "crew_lots_garages": 1,
+    "crew_signs": 0,
+    "crew_security": 0
+  },
+  {
+    "firstName": "Aidan",
+    "lastName": "Wilkes",
+    "role": "REGISTERED",
+    "crew_lots_garages": 1,
+    "crew_signs": 1,
+    "crew_security": 1
+  },
+  {
+    "firstName": "Collin",
+    "lastName": "Erhardt",
+    "role": "REGISTERED",
+    "crew_lots_garages": 1,
+    "crew_signs": 1,
+    "crew_security": 1
+  },
+  {
+    "firstName": "Elijah",
+    "lastName": "Garcia",
+    "role": "REGISTERED",
+    "crew_lots_garages": 0,
+    "crew_signs": 1,
+    "crew_security": 0
+  }
+]
