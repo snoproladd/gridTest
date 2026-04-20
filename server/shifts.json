@@ -1,0 +1,120 @@
+[
+  {
+    "day": {
+      "friday": {
+        "department": {
+          "lots_and_garages": {
+            "shift": {
+              "ingress": {
+                "schedule": {
+                  "start_time": "5:30AM",
+                  "end_time": "9:45AM"
+                },
+                "location": {
+                  "loc_1": {
+                    "name": "mvp",
+                    "vol_need": 15
+                  },
+                  "loc_2": {
+                    "name": "ogs",
+                    "vol_need": 15
+                  }
+                }
+              },
+              "egress": {
+                "schedule": {
+                  "start_time": "4:45PM",
+                  "end_time": "6:45PM"
+                },
+                "location": {
+                  "loc_1": {
+                    "name": "mvp",
+                    "vol_need": 15
+                  },
+                  "loc_2": {
+                    "name": "ogs",
+                    "vol_need": 15
+                  }
+                }
+              }
+            }
+          },
+          "dropoff_pickup": {
+            "shift": {
+              "ingress": {
+                "schedule": {
+                  "start_time": "5:30AM",
+                  "end_time": "9:45AM"
+                },
+                "location": {
+                  "loc_1": {
+                    "name": "bus",
+                    "vol_need": 4
+                  },
+                  "loc_2": {
+                    "name": "pu_do",
+                    "vol_need": 6
+                  }
+                }
+              },
+              "egress": {
+                "schedule": {
+                  "start_time": "4:45PM",
+                  "end_time": "6:45PM"
+                },
+                "location": {
+                  "loc_1": "bus",
+                  "loc_2": "pu_do"
+                }
+              }
+            }
+          },
+          "signs": {
+            "shift": {
+              "ingress": {
+                "schedule": {
+                  "start_time": "5:30AM",
+                  "end_time": "6:30AM"
+                },
+                "location": {
+                    "name": null,
+                    "vol_need": 4
+                }
+              },
+              "egress": {
+                "schedule": {
+                  "start_time": "5:30PM",
+                  "end_time": "6:30PM"
+                },
+                "location": {
+                  "name": null,
+                  "vol_need": 4
+                }
+              }
+            }
+          },
+          "security": {
+            "shift": {
+              "shift_A": {
+                "schedule": {
+                  "start_time": "9:45AM",
+                  "end_time": "10:55AM"
+                },
+                "location": {
+                  "loc_1": {
+                    "name": "mvp",
+                    "vol_need": 2
+                  },
+                  "loc_2": {
+                    "name": "ogs",
+                    "vol_need": 4
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+]

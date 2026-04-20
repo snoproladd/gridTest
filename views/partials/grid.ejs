@@ -30,7 +30,7 @@
     <div class="name-pool" id="name-pool">
       
     <% for (let i = 0; i < namePool.length; i++) { %>
-      <div class="name-pill"
+      <div class="name-pill in-pool"
        data-role="<%= rawVolunteers[i].role %>"
        >
         <%= namePool[i] %>
@@ -62,8 +62,7 @@
       <div class="schedule-header-row" id="oversight">
         <div class="schedule-header-item" id="keyman">
           Keyman:
-          <div class="schedule-header-dropzone" id="keyman-dropzone" data-role="KEYMAN"></div>
-        </div>
+          <div class="schedule-grid-dropzone" id="keyman-dropzone" data-min-role="KEYMAN"></div>        </div>
 
         <div class="schedule-header-item" id="assistant">
           Assistant:
@@ -85,5 +84,5 @@
   </section>
 
 </section>
-<script id="namePool" type="application/json"><%= namePool %></script>
-<script id="volunteersData" type="application/json"><%- rawVolunteers %></script>
+<script id="namePool" type="application/json"><%- JSON.stringify(namePool) %></script>
+<script id="volunteersData" type="application/json"><%- JSON.stringify(rawVolunteers) %></script>
