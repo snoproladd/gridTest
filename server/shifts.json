@@ -1,115 +1,340 @@
-[
-  {
-    "day": {
-      "friday": {
-        "department": {
-          "lots_and_garages": {
-            "shift": {
-              "ingress": {
-                "schedule": {
-                  "start_time": "5:30AM",
-                  "end_time": "9:45AM"
-                },
-                "location": {
-                  "loc_1": {
-                    "name": "mvp",
-                    "vol_need": 15
-                  },
-                  "loc_2": {
-                    "name": "ogs",
-                    "vol_need": 15
-                  }
-                }
-              },
-              "egress": {
-                "schedule": {
-                  "start_time": "4:45PM",
-                  "end_time": "6:45PM"
-                },
-                "location": {
-                  "loc_1": {
-                    "name": "mvp",
-                    "vol_need": 15
-                  },
-                  "loc_2": {
-                    "name": "ogs",
-                    "vol_need": 15
-                  }
-                }
+{
+  "day": {
+    "friday": {
+      "department": {
+        "lots_and_garages": {
+          "shift": {
+            "ingress": {
+              "schedule": { "start_time": "5:30AM", "end_time": "9:45AM" },
+              "location": {
+                "loc_1": { "name": "mvp", "vol_need": 15 },
+                "loc_2": { "name": "ogs", "vol_need": 15 }
+              }
+            },
+            "egress": {
+              "schedule": { "start_time": "4:45PM", "end_time": "6:45PM" },
+              "location": {
+                "loc_1": { "name": "mvp", "vol_need": 15 },
+                "loc_2": { "name": "ogs", "vol_need": 15 }
               }
             }
-          },
-          "dropoff_pickup": {
-            "shift": {
-              "ingress": {
-                "schedule": {
-                  "start_time": "5:30AM",
-                  "end_time": "9:45AM"
-                },
-                "location": {
-                  "loc_1": {
-                    "name": "bus",
-                    "vol_need": 4
-                  },
-                  "loc_2": {
-                    "name": "pu_do",
-                    "vol_need": 6
-                  }
-                }
-              },
-              "egress": {
-                "schedule": {
-                  "start_time": "4:45PM",
-                  "end_time": "6:45PM"
-                },
-                "location": {
-                  "loc_1": "bus",
-                  "loc_2": "pu_do"
-                }
+          }
+        },
+
+        "dropoff_pickup": {
+          "shift": {
+            "ingress": {
+              "schedule": { "start_time": "5:30AM", "end_time": "9:45AM" },
+              "location": {
+                "loc_1": { "name": "bus", "vol_need": 4 },
+                "loc_2": { "name": "pu_do", "vol_need": 6 }
+              }
+            },
+            "egress": {
+              "schedule": { "start_time": "4:45PM", "end_time": "6:45PM" },
+              "location": {
+                "loc_1": "bus",
+                "loc_2": "pu_do"
               }
             }
-          },
-          "signs": {
-            "shift": {
-              "ingress": {
-                "schedule": {
-                  "start_time": "5:30AM",
-                  "end_time": "6:30AM"
-                },
-                "location": {
-                    "name": null,
-                    "vol_need": 4
-                }
-              },
-              "egress": {
-                "schedule": {
-                  "start_time": "5:30PM",
-                  "end_time": "6:30PM"
-                },
-                "location": {
-                  "name": null,
-                  "vol_need": 4
-                }
+          }
+        },
+
+        "signs": {
+          "shift": {
+            "ingress": {
+              "schedule": { "start_time": "5:30AM", "end_time": "6:30AM" },
+              "location": { "name": null, "vol_need": 4 }
+            },
+            "egress": {
+              "schedule": { "start_time": "5:30PM", "end_time": "6:30PM" },
+              "location": { "name": null, "vol_need": 4 }
+            }
+          }
+        },
+
+        "security": {
+          "shift": {
+            "shift_A": {
+              "shift_index": 1,
+              "duration_minutes": 70,
+              "schedule": { "start_time": "9:45AM", "end_time": "10:55AM" },
+              "location": {
+                "loc_1": { "name": "mvp", "vol_need": 2 },
+                "loc_2": { "name": "ogs", "vol_need": 4 }
+              }
+            },
+            "shift_B": {
+              "shift_index": 2,
+              "duration_minutes": 70,
+              "schedule": { "start_time": "10:55AM", "end_time": "12:05PM" },
+              "location": {
+                "loc_1": { "name": "mvp", "vol_need": 2 },
+                "loc_2": { "name": "ogs", "vol_need": 4 }
+              }
+            },
+            "shift_C": {
+              "shift_index": 3,
+              "duration_minutes": 70,
+              "schedule": { "start_time": "12:05PM", "end_time": "1:15PM" },
+              "location": {
+                "loc_1": { "name": "mvp", "vol_need": 2 },
+                "loc_2": { "name": "ogs", "vol_need": 4 }
+              }
+            },
+            "shift_D": {
+              "shift_index": 4,
+              "duration_minutes": 70,
+              "schedule": { "start_time": "1:15PM", "end_time": "2:25PM" },
+              "location": {
+                "loc_1": { "name": "mvp", "vol_need": 2 },
+                "loc_2": { "name": "ogs", "vol_need": 4 }
+              }
+            },
+            "shift_E": {
+              "shift_index": 5,
+              "duration_minutes": 70,
+              "schedule": { "start_time": "2:25PM", "end_time": "3:35PM" },
+              "location": {
+                "loc_1": { "name": "mvp", "vol_need": 2 },
+                "loc_2": { "name": "ogs", "vol_need": 4 }
+              }
+            },
+            "shift_F": {
+              "shift_index": 6,
+              "duration_minutes": 70,
+              "schedule": { "start_time": "3:35PM", "end_time": "4:45PM" },
+              "location": {
+                "loc_1": { "name": "mvp", "vol_need": 2 },
+                "loc_2": { "name": "ogs", "vol_need": 4 }
               }
             }
-          },
-          "security": {
-            "shift": {
-              "shift_A": {
-                "schedule": {
-                  "start_time": "9:45AM",
-                  "end_time": "10:55AM"
-                },
-                "location": {
-                  "loc_1": {
-                    "name": "mvp",
-                    "vol_need": 2
-                  },
-                  "loc_2": {
-                    "name": "ogs",
-                    "vol_need": 4
-                  }
-                }
+          }
+        }
+      }
+    },
+
+    "saturday": {
+      "department": {
+        "lots_and_garages": {
+          "shift": {
+            "ingress": {
+              "schedule": { "start_time": "5:30AM", "end_time": "9:45AM" },
+              "location": {
+                "loc_1": { "name": "mvp", "vol_need": 15 },
+                "loc_2": { "name": "ogs", "vol_need": 15 }
+              }
+            },
+            "egress": {
+              "schedule": { "start_time": "4:30PM", "end_time": "6:30PM" },
+              "location": {
+                "loc_1": { "name": "mvp", "vol_need": 15 },
+                "loc_2": { "name": "ogs", "vol_need": 15 }
+              }
+            }
+          }
+        },
+
+        "dropoff_pickup": {
+          "shift": {
+            "ingress": {
+              "schedule": { "start_time": "5:30AM", "end_time": "9:45AM" },
+              "location": {
+                "loc_1": { "name": "bus", "vol_need": 4 },
+                "loc_2": { "name": "pu_do", "vol_need": 6 }
+              }
+            },
+            "egress": {
+              "schedule": { "start_time": "4:30PM", "end_time": "6:30PM" },
+              "location": {
+                "loc_1": "bus",
+                "loc_2": "pu_do"
+              }
+            }
+          }
+        },
+
+        "signs": {
+          "shift": {
+            "ingress": {
+              "schedule": { "start_time": "5:30AM", "end_time": "6:30AM" },
+              "location": { "name": null, "vol_need": 4 }
+            },
+            "egress": {
+              "schedule": { "start_time": "5:15PM", "end_time": "6:15PM" },
+              "location": { "name": null, "vol_need": 4 }
+            }
+          }
+        },
+
+        "security": {
+          "shift": {
+            "shift_A": {
+              "shift_index": 1,
+              "duration_minutes": 65,
+              "schedule": { "start_time": "9:45AM", "end_time": "10:50AM" },
+              "location": {
+                "loc_1": { "name": "mvp", "vol_need": 2 },
+                "loc_2": { "name": "ogs", "vol_need": 4 }
+              }
+            },
+            "shift_B": {
+              "shift_index": 2,
+              "duration_minutes": 65,
+              "schedule": { "start_time": "10:50AM", "end_time": "11:55AM" },
+              "location": {
+                "loc_1": { "name": "mvp", "vol_need": 2 },
+                "loc_2": { "name": "ogs", "vol_need": 4 }
+              }
+            },
+            "shift_C": {
+              "shift_index": 3,
+              "duration_minutes": 65,
+              "schedule": { "start_time": "11:55AM", "end_time": "1:00PM" },
+              "location": {
+                "loc_1": { "name": "mvp", "vol_need": 2 },
+                "loc_2": { "name": "ogs", "vol_need": 4 }
+              }
+            },
+            "shift_D": {
+              "shift_index": 4,
+              "duration_minutes": 70,
+              "schedule": { "start_time": "1:00PM", "end_time": "2:10PM" },
+              "location": {
+                "loc_1": { "name": "mvp", "vol_need": 2 },
+                "loc_2": { "name": "ogs", "vol_need": 4 }
+              }
+            },
+            "shift_E": {
+              "shift_index": 5,
+              "duration_minutes": 70,
+              "schedule": { "start_time": "2:10PM", "end_time": "3:20PM" },
+              "location": {
+                "loc_1": { "name": "mvp", "vol_need": 2 },
+                "loc_2": { "name": "ogs", "vol_need": 4 }
+              }
+            },
+            "shift_F": {
+              "shift_index": 6,
+              "duration_minutes": 70,
+              "schedule": { "start_time": "3:20PM", "end_time": "4:30PM" },
+              "location": {
+                "loc_1": { "name": "mvp", "vol_need": 2 },
+                "loc_2": { "name": "ogs", "vol_need": 4 }
+              }
+            }
+          }
+        }
+      }
+    },
+
+    "sunday": {
+      "department": {
+        "lots_and_garages": {
+          "shift": {
+            "ingress": {
+              "schedule": { "start_time": "5:30AM", "end_time": "9:45AM" },
+              "location": {
+                "loc_1": { "name": "mvp", "vol_need": 15 },
+                "loc_2": { "name": "ogs", "vol_need": 15 }
+              }
+            },
+            "egress": {
+              "schedule": { "start_time": "3:45PM", "end_time": "5:45PM" },
+              "location": {
+                "loc_1": { "name": "mvp", "vol_need": 15 },
+                "loc_2": { "name": "ogs", "vol_need": 15 }
+              }
+            }
+          }
+        },
+
+        "dropoff_pickup": {
+          "shift": {
+            "ingress": {
+              "schedule": { "start_time": "5:30AM", "end_time": "9:45AM" },
+              "location": {
+                "loc_1": { "name": "bus", "vol_need": 4 },
+                "loc_2": { "name": "pu_do", "vol_need": 6 }
+              }
+            },
+            "egress": {
+              "schedule": { "start_time": "3:45PM", "end_time": "5:45PM" },
+              "location": {
+                "loc_1": "bus",
+                "loc_2": "pu_do"
+              }
+            }
+          }
+        },
+
+        "signs": {
+          "shift": {
+            "ingress": {
+              "schedule": { "start_time": "5:30AM", "end_time": "6:30AM" },
+              "location": { "name": null, "vol_need": 4 }
+            },
+            "egress": {
+              "schedule": { "start_time": "4:30PM", "end_time": "5:30PM" },
+              "location": { "name": null, "vol_need": 4 }
+            }
+          }
+        },
+
+        "security": {
+          "shift": {
+            "shift_A": {
+              "shift_index": 1,
+              "duration_minutes": 60,
+              "schedule": { "start_time": "9:45AM", "end_time": "10:45AM" },
+              "location": {
+                "loc_1": { "name": "mvp", "vol_need": 2 },
+                "loc_2": { "name": "ogs", "vol_need": 4 }
+              }
+            },
+            "shift_B": {
+              "shift_index": 2,
+              "duration_minutes": 60,
+              "schedule": { "start_time": "10:45AM", "end_time": "11:45AM" },
+              "location": {
+                "loc_1": { "name": "mvp", "vol_need": 2 },
+                "loc_2": { "name": "ogs", "vol_need": 4 }
+              }
+            },
+            "shift_C": {
+              "shift_index": 3,
+              "duration_minutes": 60,
+              "schedule": { "start_time": "11:45AM", "end_time": "12:45PM" },
+              "location": {
+                "loc_1": { "name": "mvp", "vol_need": 2 },
+                "loc_2": { "name": "ogs", "vol_need": 4 }
+              }
+            },
+            "shift_D": {
+              "shift_index": 4,
+              "duration_minutes": 60,
+              "schedule": { "start_time": "12:45PM", "end_time": "1:45PM" },
+              "location": {
+                "loc_1": { "name": "mvp", "vol_need": 2 },
+                "loc_2": { "name": "ogs", "vol_need": 4 }
+              }
+            },
+            "shift_E": {
+              "shift_index": 5,
+              "duration_minutes": 60,
+              "schedule": { "start_time": "1:45PM", "end_time": "2:45PM" },
+              "location": {
+                "loc_1": { "name": "mvp", "vol_need": 2 },
+                "loc_2": { "name": "ogs", "vol_need": 4 }
+              }
+            },
+            "shift_F": {
+              "shift_index": 6,
+              "duration_minutes": 60,
+              "schedule": { "start_time": "2:45PM", "end_time": "3:45PM" },
+              "location": {
+                "loc_1": { "name": "mvp", "vol_need": 2 },
+                "loc_2": { "name": "ogs", "vol_need": 4 }
               }
             }
           }
@@ -117,4 +342,4 @@
       }
     }
   }
-]
+}
