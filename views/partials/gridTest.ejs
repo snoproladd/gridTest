@@ -1,0 +1,95 @@
+<!-- /views/partials/grid.ejs -->
+
+<section class="page-layout">
+
+  <!-- LEFT SIDEBAR: NAME POOL -->
+  <aside class="vol-sidebar">
+    <div class="name-sidebar-header">Available Volunteers</div>
+    <div class="row vol-filter">
+      <label for="vol-rank-filter">Filter by type:</label>
+      <select id="vol-rank-filter">
+        <option value="">All Volunteers</option>
+        <option value=1>Qualified Man</option>
+        <option value=2>Keyman</option>
+        <option value=3>Overseer</option>
+      </select>
+      </div>
+      <div class="row vol-filter">
+      <label for="vol-department-filter">Filter by department:</label>
+      <select id="vol-department-filter">
+        <option value="">All Departments</option>
+        <option value="Lots">Lots & Garages</option>
+        <option value="Signs">Signs</option>
+        <option value="Security">Security</option>
+        <option value="DO_PU">Dropoff/Pickup</option>
+        <option value="MS">Mobile Support</option>
+      </select>
+      </div>
+    </div>
+
+    <div class="name-pool" id="name-pool">
+
+    <% for (let i = 0; i < namePool.length; i++) { %>
+      <div class="name-pill in-pool"
+       data-role="<%= rawVolunteers[i].role %>"
+       >
+        <%= namePool[i] %>
+      </div>
+    <% } %>
+    </div>
+  </aside>
+
+  <!-- RIGHT SIDE: EXISTING CONTENT (UNCHANGED STRUCTURE) -->
+  <section class="grid-container calendar">
+
+    <div class="schedule-header">
+      
+      <div class="dept-container">
+        <div class="shift-dropzone">
+          <div class="loc-dropzone">
+          </div>
+        </div>
+      </div>
+      <!-- <div class="schedule-header-row" id="day-and-location">
+        <div class="schedule-header-item" id="Location">
+          Location:
+        </div>
+        <div class="schedule-header-item" id="Day">
+          Day:
+        </div>
+      </div>
+
+      <div class="schedule-header-row" id="shift">
+        <div class="schedule-header-item" id="Shift">
+          Shift:
+        </div>
+      </div>
+
+      <div class="schedule-header-row" id="oversight">
+        <div class="schedule-header-item" id="keyman">
+          Keyman:
+          <div class="schedule-grid-dropzone" id="keyman-dropzone" data-min-role="KEYMAN"></div>        </div>
+
+        <div class="schedule-header-item" id="assistant">
+          Assistant:
+          <div class="schedule-header-dropzone" id="assistant-dropzone"></div>
+        </div>
+      </div> -->
+
+    </div>
+
+    <div class="schedule-grid pre-drop-perim" id="schedule-grid">
+      <% for (let p = 0; p < positionDrops.length; p++) { %>
+        <div
+          class="schedule-grid-dropzone"
+          id="<%= positionDrops[p] %>-dropzone">
+        </div>
+      <% } %>
+    </div>
+
+  </section>
+
+</section>
+<script id="namePool" type="application/json"><%- JSON.stringify(namePool) %></script>
+<script id="volunteersData" type="application/json"><%- JSON.stringify(rawVolunteers) %></script>
+<script id="schedule" type="application/json"><%- JSON.stringify(rawSchedule) %></script>

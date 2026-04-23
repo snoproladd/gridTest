@@ -2,7 +2,7 @@
 import express from "express";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import  { getVolunteers }  from "./jsonInteraction.js";
+import  { getVolunteers, getSchedule }  from "./jsonInteraction.js";
 
 
 const app = express();
@@ -36,7 +36,6 @@ function range(start, end) {
 app.get("/",  (req, res) => {
   const rawVolunteers =  getVolunteers();
   const namePool = rawVolunteers.map((v) => v.firstName + " " + v.lastName);
-  console.log("rawVolunteers: ", rawVolunteers)
   res.render("index", {
     title: "Interact.js Local Test",
     positionDrops: positions,
@@ -45,5 +44,22 @@ app.get("/",  (req, res) => {
   });
 });
 
+app.get("/test", (req, res) => {
+  const rawVolunteers = getVolunteers();
+  const namePool = rawVolunteers.map((v) => v.firstName + " " + v.lastName);
+  const rawSchedule = getSchedule();
+  const days = rawSchedule.day;
+  console.log("Days: ", days)
+  
+  let departments = [];
+  for (const day of Object.entries(days)){
+      res.render("indexTest", {
+    title: "Interact.js Local Test",
+    positionDrops: positions,
+    namePool: namePool,
+    rawVolunteers: rawVolunteers,
+    rawSchedule: rawSchedule,
+  });
+});
 export default app;
 
