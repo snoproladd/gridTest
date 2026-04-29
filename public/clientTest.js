@@ -1,6 +1,17 @@
 /* global interact */
 // @ts-check
 
+import { initDomEvents } from "./domEvents.js";
+import { initDomActions } from "./domActions.js";
+
+import { log } from "./logger.client.js";
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  initDomEvents();
+  initDomActions();
+})
+
 /**
  * @typedef {"NON_REGISTERED"|"REGISTERED"|"KEYMAN"|"OVERSEER"|"ASSISTANT_ADMIN"|"ADMIN"} RoleName
  * @typedef {0|1|boolean|null|undefined} CrewFlag
@@ -111,11 +122,11 @@ const volunteersDataEl = /** @type {HTMLElement|null} */ (
 /** @type {Volunteer[]} */
 const volunteers = JSON.parse((volunteersDataEl?.textContent ?? "[]") || "[]");
 
-console.log(
+log(
   "Typeof Volunteers in client.js:",
   Object.prototype.toString.call(volunteers),
 );
-console.log("Volunteers data in client.js:", volunteers);
+log("Volunteers data in client.js:", volunteers);
 
 // -------------------------
 // Sidebar-only Pills Helpers (.in-pool)

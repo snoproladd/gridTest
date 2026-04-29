@@ -1,0 +1,225 @@
+/* /public/styles/styles.css */
+
+/* =========================
+   GLOBAL BASELINE
+   ========================= */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+    background: #fafafa;
+    color: #222;
+}
+
+/* =========================
+   PAGE LAYOUT (SIDEBAR + MAIN)
+   ========================= */
+
+.page-layout {
+    display: grid;
+    grid-template-columns: 300px minmax(0, 1fr);
+}
+
+/* =========================
+   LEFT SIDEBAR (NAME POOL)
+   ========================= */
+
+.name-sidebar {
+    background: #ffffff;
+    border-right: 2px solid #000;
+    padding: 16px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.name-sidebar-header {
+    font-weight: 700;
+    font-size: 16px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #000;
+}
+
+/* individual names (future draggables) */
+
+.name-pill {
+    padding: 8px 10px;
+    background: #f3f3f3;
+    border: 1px solid #999;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+/* =========================
+   RIGHT SIDE EXISTING LAYOUT
+   ========================= */
+
+.grid-container {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    gap: 24px;
+    padding: 24px;
+}
+
+/* =========================
+   HEADER (TOP METADATA)
+   ========================= */
+
+.schedule-header {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    width: 55%;
+    justify-self: end;
+
+    padding: 16px;
+    background: #fff;
+    border: 2px solid #000;
+}
+
+.schedule-header-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 32px;
+}
+
+.schedule-header-item {
+    font-size: 15px;
+    font-weight: 600;
+    min-width: 220px;
+}
+
+/* =========================
+   HEADER DROPZONES
+   ========================= */
+
+.schedule-header-dropzone {
+    margin-top: 6px;
+    height: 38px;
+    width: 180px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 2px dashed #777;
+    background: #fdfdfd;
+}
+
+/* =========================
+   SCHEDULE GRID (UNCHANGED)
+   ========================= */
+
+.schedule-grid {
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 0;
+
+    border: 3px solid #000;
+}
+
+.schedule-grid-dropzone.drop-target {
+    background: #e9f5ff;
+    border-color: #007acc;
+}
+
+.schedule-grid-dropzone {
+    min-height: 84px;
+    /* ⬅ bigger targets */
+    padding: 8px;
+
+    border: 2px dashed #999;
+    background: #fafafa;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* =========================
+   EMPTY DROP HINT
+   ========================= */
+
+.schedule-header-dropzone:empty::after,
+.schedule-grid-dropzone:empty::after {
+    content: "Drop here";
+    font-size: 13px;
+    color: #888;
+}
+
+.name-pill {
+    width: 100%;
+    margin-bottom: 6px;
+    background: #f5f5f5;
+    touch-action: none;
+    user-select: none;
+    cursor: grab;
+}
+
+.name-pill:active {
+    cursor: grabbing;
+}
+.name-pill.assigned {
+    background: #dff3df;
+    border-color: #2e7d32;
+}
+
+aside{
+    width: 400px;
+    
+}
+select{
+    width: 200px;
+    height: 50px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    gap: 20px;
+    padding: 24px;
+    max-width: 1100px;
+}
+.department {
+    background: #ffffff;
+    border: 3px solid #000;
+    /* thicker border */
+    padding: 20px 24px;
+    /* ⬅ increased padding */
+    min-height: 260px;
+}
+.department>h3 {
+    margin: 0 0 18px 0;
+
+    font-size: 18px;
+    /* ⬅ larger text */
+    font-weight: 800;
+
+    border-bottom: 3px solid #000;
+    padding-bottom: 8px;
+}
+.scheduler {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    /* more space between departments */
+
+    margin-top: 20px;
+    padding: 24px 28px;
+    /* ⬅ bigger interior padding */
+
+    background: #fdfdfd;
+    border: 2px solid #000;
+}
+
+.department:nth-child(even) {
+    background: #f9f9f9;
+}

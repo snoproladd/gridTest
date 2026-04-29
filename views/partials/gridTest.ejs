@@ -40,16 +40,30 @@
   </aside>
 
   <!-- RIGHT SIDE: EXISTING CONTENT (UNCHANGED STRUCTURE) -->
-  <section class="grid-container calendar">
 
-    <div class="schedule-header">
+
+  <section class="grid-container calendar-page">
+      <div class="schedule-header">
+        <label for="scheduleDayDropdown">Choose a Day</label>
+        <select  name="scheduleDayDropdown" id="scheduleDayDropdown" data-action="filter">
+          <option value="" disabled selected>
+            -- Select a Day --
+          </option> 
+          <% const days = Object.keys(rawSchedule.day ?? {}); %>
+          <% for(day of days){ %>
+            <option value="<%= day %>"><%= day %></option>
+          <% } %>
+        </select>
+      <div class="scheduler">      
+        <div class="calendar-body grid-container">
+            <div class="calendar-day-container" id="daySchedule">
+            <!-- Populated from domActions.js filterCalendarDay()--> 
+            </div> 
+        </div> 
+      </div>   
+    </section>
       
-      <div class="dept-container">
-        <div class="shift-dropzone">
-          <div class="loc-dropzone">
-          </div>
-        </div>
-      </div>
+   
       <!-- <div class="schedule-header-row" id="day-and-location">
         <div class="schedule-header-item" id="Location">
           Location:
@@ -78,14 +92,14 @@
 
     </div>
 
-    <div class="schedule-grid pre-drop-perim" id="schedule-grid">
+    <!-- <div class="schedule-grid pre-drop-perim" id="schedule-grid">
       <% for (let p = 0; p < positionDrops.length; p++) { %>
         <div
           class="schedule-grid-dropzone"
           id="<%= positionDrops[p] %>-dropzone">
         </div>
       <% } %>
-    </div>
+    </div> -->
 
   </section>
 

@@ -1,7 +1,7 @@
 // jsonInteraction.js
 
 // This file is for testing JSON data flow from server to client.
-
+import { log } from "../logger.server.js";
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";

@@ -15,9 +15,16 @@
 
 <!-- Interact.js pre-bundled (global `interact`) -->
   <script src="/vendor/interact.min.js"></script>
+<script>
+  window.__IS_DEV__ = <%= IS_DEV %>;
+</script>
+<script type="module" src="/clientTest.js"></script>
 
   <!-- Your code (no module imports) -->
   <script src="/client.js"></script>
+  
+
+
 
 </body>
 

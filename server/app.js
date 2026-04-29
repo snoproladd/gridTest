@@ -3,9 +3,15 @@ import express from "express";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import  { getVolunteers, getSchedule }  from "./jsonInteraction.js";
+import { log } from "../logger.server.js";
 
 
 const app = express();
+app.use((req, res, next) => {
+  res.locals.IS_DEV = process.env.NODE_ENV !== "production";
+  next();
+});
+
 
 // ESM-safe __dirname
 const __filename = fileURLToPath(import.meta.url);
@@ -44,22 +50,95 @@ app.get("/",  (req, res) => {
   });
 });
 
+
+
 app.get("/test", (req, res) => {
   const rawVolunteers = getVolunteers();
   const namePool = rawVolunteers.map((v) => v.firstName + " " + v.lastName);
   const rawSchedule = getSchedule();
-  const days = rawSchedule.day;
-  console.log("Days: ", days)
-  
-  let departments = [];
-  for (const day of Object.entries(days)){
-      res.render("indexTest", {
-    title: "Interact.js Local Test",
-    positionDrops: positions,
-    namePool: namePool,
-    rawVolunteers: rawVolunteers,
-    rawSchedule: rawSchedule,
-  });
-});
-export default app;
+  const days = Object.keys(rawSchedule.day)
+  const departments = days.map(day =>({
+    day,
+    depts: Object.keys(rawSchedule.day[day].department)
+  }));
+log(departments)
 
+  
+const departmentsWithShifts = days.map((day) => ({
+  day,
+  departments: Object.entries(rawSchedule.day[day].department).map(
+    ([deptName, deptObj]) => ({
+      dept: deptName,
+      shifts: Object.keys(deptObj.shift),
+    }),
+  ),
+}));
+
+const scheduleTree = days.map((day) => ({
+  day,
+  departments: Object.entries(rawSchedule.day[day].department).map(
+    ([deptName, deptObj]) => ({
+      dept: deptName,
+      shifts: Object.entries(deptObj.shift).map(([shiftName, shiftObj]) => ({
+        shift: shiftName,
+        schedule: shiftObj.schedule,
+        locations: Object.entries(shiftObj.location ?? {})
+          .filter(([locKey, locObj]) => {
+            if (locObj === null) {
+              console.warn("Null location object - skipping:", {
+                day,
+                deptName,
+                shiftName,
+                locKey,
+              });
+              return false;
+            }
+            return true;
+          })
+          .map(([locKey, locObj]) => ({
+            id: locKey,
+            name: locObj.name,
+            vol_need: locObj.vol_need,
+          })),
+      })),
+    }),
+  ),
+}));
+
+  res.render("indexTest", {
+    title: "Interact.js Local Test",
+    rawSchedule,
+    positionDrops: positions,
+    namePool,
+    rawVolunteers,
+    scheduleTree
+  });
+
+})
+
+//==============================================
+//    HELPERS
+//==============================================
+
+function getDayDepts(day){
+  days.map((day) => ({
+  day,
+  departments: Object.entries(rawSchedule.day[day].department).map(
+    ([deptName, deptObj]) => ({
+      dept: deptName,
+      shifts: Object.keys(deptObj.shift),
+    }),
+  ),
+}));
+}
+
+
+//===============================================
+//    Internal API
+//===============================================
+
+app.get("/api/schedule", (req, res) => {
+  res.json(getSchedule());
+});
+
+export default app;
