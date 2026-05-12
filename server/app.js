@@ -141,4 +141,8 @@ app.get("/api/schedule", (req, res) => {
   res.json(getSchedule());
 });
 
+app.get("/api/volunteers", (req, res) => {
+  res.json(getVolunteers());
+});
+
 export default app;
